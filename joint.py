@@ -11,7 +11,7 @@ def joint_entropy(pdf):                 # pdf is the joint p.d.f. of the discret
     for i in range(0, len(pdf)):
 
         if pdf[i] != 0:
-            joint_ent -= pdf[0] * log2(pdf[0])
+            joint_ent -= pdf[i] * log2(pdf[i])
 
     return joint_ent
 
