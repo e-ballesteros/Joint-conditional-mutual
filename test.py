@@ -1,6 +1,7 @@
 from joint import joint_entropy
 from conditional import conditional_entropy
 from mutual_info import mutual_information
+import numpy as np
 
 
 in_string = input('Introduce marginal p.d.f. of X separated by commas: ')
@@ -9,11 +10,11 @@ pdf_x = list(map(float, in_string.split(',')))
 in_string = input('Introduce marginal p.d.f. of Y separated by commas: ')
 pdf_y = list(map(float, in_string.split(',')))
 
-joint_pdf = [[]]
+joint_pdf = np.zeros(shape=(len(pdf_y), len(pdf_x)))
 
-for i in range(0, len(pdf_y) - 1):
-    for j in range(0, len(pdf_x) - 1):
-        joint_pdf[i][j] = float(input('Introduce element of row', i, 'and column', j, ': '))
+for i in range(0, len(pdf_y)):
+    for j in range(0, len(pdf_x)):
+        joint_pdf[i][j] = float(input('Introduce element of row ' + str(i) + ' and column ' + str(j) + ': '))
 
 #joint_pdf = list(map(float, in_string.split(',')))
 
