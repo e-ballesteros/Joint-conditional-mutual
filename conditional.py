@@ -17,6 +17,6 @@ def conditional_entropy(joint, marginal_x, marginal_y):
     for i in range(0, len(marginal_y)):
         for j in range(0, len(marginal_x)):
             if joint[i][j] != 0 and marginal_x != 0:        # If the probability is zero there is no need to calculate
-                conditional_ent_yx -= joint[i][j] * log2(joint[i][j]/marginal_x[i])
+                conditional_ent_yx -= joint[i][j] * log2(joint[i][j]/marginal_x[j])
 
     return [conditional_ent_xy, conditional_ent_yx]
